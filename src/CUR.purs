@@ -20,22 +20,26 @@ import Data.StrMap as StrMap
 import AWS.Request as Request
 import AWS.Request.Types as Types
 
-serviceName = "CUR" :: String
-
 
 -- | Delete a specified report definition
 deleteReportDefinition :: forall eff. DeleteReportDefinitionRequest -> Aff (exception :: EXCEPTION | eff) DeleteReportDefinitionResponse
-deleteReportDefinition = Request.request serviceName "deleteReportDefinition" 
+deleteReportDefinition = Request.request service method  where
+    service = Request.ServiceName "CUR"
+    method = Request.MethodName "deleteReportDefinition"
 
 
 -- | Describe a list of report definitions owned by the account
 describeReportDefinitions :: forall eff. DescribeReportDefinitionsRequest -> Aff (exception :: EXCEPTION | eff) DescribeReportDefinitionsResponse
-describeReportDefinitions = Request.request serviceName "describeReportDefinitions" 
+describeReportDefinitions = Request.request service method  where
+    service = Request.ServiceName "CUR"
+    method = Request.MethodName "describeReportDefinitions"
 
 
 -- | Create a new report definition
 putReportDefinition :: forall eff. PutReportDefinitionRequest -> Aff (exception :: EXCEPTION | eff) PutReportDefinitionResponse
-putReportDefinition = Request.request serviceName "putReportDefinition" 
+putReportDefinition = Request.request service method  where
+    service = Request.ServiceName "CUR"
+    method = Request.MethodName "putReportDefinition"
 
 
 -- | Region of customer S3 bucket.
