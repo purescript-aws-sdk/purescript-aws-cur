@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -60,7 +59,7 @@ instance encodeCompressionFormat :: Encode CompressionFormat where encode = gene
 
 -- | Request of DeleteReportDefinition
 newtype DeleteReportDefinitionRequest = DeleteReportDefinitionRequest 
-  { "ReportName" :: NullOrUndefined (ReportName)
+  { "ReportName" :: Maybe (ReportName)
   }
 derive instance newtypeDeleteReportDefinitionRequest :: Newtype DeleteReportDefinitionRequest _
 derive instance repGenericDeleteReportDefinitionRequest :: Generic DeleteReportDefinitionRequest _
@@ -70,18 +69,18 @@ instance encodeDeleteReportDefinitionRequest :: Encode DeleteReportDefinitionReq
 
 -- | Constructs DeleteReportDefinitionRequest from required parameters
 newDeleteReportDefinitionRequest :: DeleteReportDefinitionRequest
-newDeleteReportDefinitionRequest  = DeleteReportDefinitionRequest { "ReportName": (NullOrUndefined Nothing) }
+newDeleteReportDefinitionRequest  = DeleteReportDefinitionRequest { "ReportName": Nothing }
 
 -- | Constructs DeleteReportDefinitionRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteReportDefinitionRequest' :: ( { "ReportName" :: NullOrUndefined (ReportName) } -> {"ReportName" :: NullOrUndefined (ReportName) } ) -> DeleteReportDefinitionRequest
-newDeleteReportDefinitionRequest'  customize = (DeleteReportDefinitionRequest <<< customize) { "ReportName": (NullOrUndefined Nothing) }
+newDeleteReportDefinitionRequest' :: ( { "ReportName" :: Maybe (ReportName) } -> {"ReportName" :: Maybe (ReportName) } ) -> DeleteReportDefinitionRequest
+newDeleteReportDefinitionRequest'  customize = (DeleteReportDefinitionRequest <<< customize) { "ReportName": Nothing }
 
 
 
 -- | Response of DeleteReportDefinition
 newtype DeleteReportDefinitionResponse = DeleteReportDefinitionResponse 
-  { "ResponseMessage" :: NullOrUndefined (DeleteResponseMessage)
+  { "ResponseMessage" :: Maybe (DeleteResponseMessage)
   }
 derive instance newtypeDeleteReportDefinitionResponse :: Newtype DeleteReportDefinitionResponse _
 derive instance repGenericDeleteReportDefinitionResponse :: Generic DeleteReportDefinitionResponse _
@@ -91,12 +90,12 @@ instance encodeDeleteReportDefinitionResponse :: Encode DeleteReportDefinitionRe
 
 -- | Constructs DeleteReportDefinitionResponse from required parameters
 newDeleteReportDefinitionResponse :: DeleteReportDefinitionResponse
-newDeleteReportDefinitionResponse  = DeleteReportDefinitionResponse { "ResponseMessage": (NullOrUndefined Nothing) }
+newDeleteReportDefinitionResponse  = DeleteReportDefinitionResponse { "ResponseMessage": Nothing }
 
 -- | Constructs DeleteReportDefinitionResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteReportDefinitionResponse' :: ( { "ResponseMessage" :: NullOrUndefined (DeleteResponseMessage) } -> {"ResponseMessage" :: NullOrUndefined (DeleteResponseMessage) } ) -> DeleteReportDefinitionResponse
-newDeleteReportDefinitionResponse'  customize = (DeleteReportDefinitionResponse <<< customize) { "ResponseMessage": (NullOrUndefined Nothing) }
+newDeleteReportDefinitionResponse' :: ( { "ResponseMessage" :: Maybe (DeleteResponseMessage) } -> {"ResponseMessage" :: Maybe (DeleteResponseMessage) } ) -> DeleteReportDefinitionResponse
+newDeleteReportDefinitionResponse'  customize = (DeleteReportDefinitionResponse <<< customize) { "ResponseMessage": Nothing }
 
 
 
@@ -112,8 +111,8 @@ instance encodeDeleteResponseMessage :: Encode DeleteResponseMessage where encod
 
 -- | Request of DescribeReportDefinitions
 newtype DescribeReportDefinitionsRequest = DescribeReportDefinitionsRequest 
-  { "MaxResults" :: NullOrUndefined (MaxResults)
-  , "NextToken" :: NullOrUndefined (GenericString)
+  { "MaxResults" :: Maybe (MaxResults)
+  , "NextToken" :: Maybe (GenericString)
   }
 derive instance newtypeDescribeReportDefinitionsRequest :: Newtype DescribeReportDefinitionsRequest _
 derive instance repGenericDescribeReportDefinitionsRequest :: Generic DescribeReportDefinitionsRequest _
@@ -123,19 +122,19 @@ instance encodeDescribeReportDefinitionsRequest :: Encode DescribeReportDefiniti
 
 -- | Constructs DescribeReportDefinitionsRequest from required parameters
 newDescribeReportDefinitionsRequest :: DescribeReportDefinitionsRequest
-newDescribeReportDefinitionsRequest  = DescribeReportDefinitionsRequest { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeReportDefinitionsRequest  = DescribeReportDefinitionsRequest { "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeReportDefinitionsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeReportDefinitionsRequest' :: ( { "MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (GenericString) } -> {"MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (GenericString) } ) -> DescribeReportDefinitionsRequest
-newDescribeReportDefinitionsRequest'  customize = (DescribeReportDefinitionsRequest <<< customize) { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeReportDefinitionsRequest' :: ( { "MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (GenericString) } -> {"MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (GenericString) } ) -> DescribeReportDefinitionsRequest
+newDescribeReportDefinitionsRequest'  customize = (DescribeReportDefinitionsRequest <<< customize) { "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 -- | Response of DescribeReportDefinitions
 newtype DescribeReportDefinitionsResponse = DescribeReportDefinitionsResponse 
-  { "ReportDefinitions" :: NullOrUndefined (ReportDefinitionList)
-  , "NextToken" :: NullOrUndefined (GenericString)
+  { "ReportDefinitions" :: Maybe (ReportDefinitionList)
+  , "NextToken" :: Maybe (GenericString)
   }
 derive instance newtypeDescribeReportDefinitionsResponse :: Newtype DescribeReportDefinitionsResponse _
 derive instance repGenericDescribeReportDefinitionsResponse :: Generic DescribeReportDefinitionsResponse _
@@ -145,18 +144,18 @@ instance encodeDescribeReportDefinitionsResponse :: Encode DescribeReportDefinit
 
 -- | Constructs DescribeReportDefinitionsResponse from required parameters
 newDescribeReportDefinitionsResponse :: DescribeReportDefinitionsResponse
-newDescribeReportDefinitionsResponse  = DescribeReportDefinitionsResponse { "NextToken": (NullOrUndefined Nothing), "ReportDefinitions": (NullOrUndefined Nothing) }
+newDescribeReportDefinitionsResponse  = DescribeReportDefinitionsResponse { "NextToken": Nothing, "ReportDefinitions": Nothing }
 
 -- | Constructs DescribeReportDefinitionsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeReportDefinitionsResponse' :: ( { "ReportDefinitions" :: NullOrUndefined (ReportDefinitionList) , "NextToken" :: NullOrUndefined (GenericString) } -> {"ReportDefinitions" :: NullOrUndefined (ReportDefinitionList) , "NextToken" :: NullOrUndefined (GenericString) } ) -> DescribeReportDefinitionsResponse
-newDescribeReportDefinitionsResponse'  customize = (DescribeReportDefinitionsResponse <<< customize) { "NextToken": (NullOrUndefined Nothing), "ReportDefinitions": (NullOrUndefined Nothing) }
+newDescribeReportDefinitionsResponse' :: ( { "ReportDefinitions" :: Maybe (ReportDefinitionList) , "NextToken" :: Maybe (GenericString) } -> {"ReportDefinitions" :: Maybe (ReportDefinitionList) , "NextToken" :: Maybe (GenericString) } ) -> DescribeReportDefinitionsResponse
+newDescribeReportDefinitionsResponse'  customize = (DescribeReportDefinitionsResponse <<< customize) { "NextToken": Nothing, "ReportDefinitions": Nothing }
 
 
 
 -- | This exception is thrown when putting a report preference with a name that already exists.
 newtype DuplicateReportNameException = DuplicateReportNameException 
-  { "Message" :: NullOrUndefined (ErrorMessage)
+  { "Message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeDuplicateReportNameException :: Newtype DuplicateReportNameException _
 derive instance repGenericDuplicateReportNameException :: Generic DuplicateReportNameException _
@@ -166,12 +165,12 @@ instance encodeDuplicateReportNameException :: Encode DuplicateReportNameExcepti
 
 -- | Constructs DuplicateReportNameException from required parameters
 newDuplicateReportNameException :: DuplicateReportNameException
-newDuplicateReportNameException  = DuplicateReportNameException { "Message": (NullOrUndefined Nothing) }
+newDuplicateReportNameException  = DuplicateReportNameException { "Message": Nothing }
 
 -- | Constructs DuplicateReportNameException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDuplicateReportNameException' :: ( { "Message" :: NullOrUndefined (ErrorMessage) } -> {"Message" :: NullOrUndefined (ErrorMessage) } ) -> DuplicateReportNameException
-newDuplicateReportNameException'  customize = (DuplicateReportNameException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newDuplicateReportNameException' :: ( { "Message" :: Maybe (ErrorMessage) } -> {"Message" :: Maybe (ErrorMessage) } ) -> DuplicateReportNameException
+newDuplicateReportNameException'  customize = (DuplicateReportNameException <<< customize) { "Message": Nothing }
 
 
 
@@ -197,7 +196,7 @@ instance encodeGenericString :: Encode GenericString where encode = genericEncod
 
 -- | This exception is thrown on a known dependency failure.
 newtype InternalErrorException = InternalErrorException 
-  { "Message" :: NullOrUndefined (ErrorMessage)
+  { "Message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeInternalErrorException :: Newtype InternalErrorException _
 derive instance repGenericInternalErrorException :: Generic InternalErrorException _
@@ -207,12 +206,12 @@ instance encodeInternalErrorException :: Encode InternalErrorException where enc
 
 -- | Constructs InternalErrorException from required parameters
 newInternalErrorException :: InternalErrorException
-newInternalErrorException  = InternalErrorException { "Message": (NullOrUndefined Nothing) }
+newInternalErrorException  = InternalErrorException { "Message": Nothing }
 
 -- | Constructs InternalErrorException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInternalErrorException' :: ( { "Message" :: NullOrUndefined (ErrorMessage) } -> {"Message" :: NullOrUndefined (ErrorMessage) } ) -> InternalErrorException
-newInternalErrorException'  customize = (InternalErrorException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInternalErrorException' :: ( { "Message" :: Maybe (ErrorMessage) } -> {"Message" :: Maybe (ErrorMessage) } ) -> InternalErrorException
+newInternalErrorException'  customize = (InternalErrorException <<< customize) { "Message": Nothing }
 
 
 
@@ -267,7 +266,7 @@ newtype ReportDefinition = ReportDefinition
   , "S3Bucket" :: (S3Bucket)
   , "S3Prefix" :: (S3Prefix)
   , "S3Region" :: (AWSRegion)
-  , "AdditionalArtifacts" :: NullOrUndefined (AdditionalArtifactList)
+  , "AdditionalArtifacts" :: Maybe (AdditionalArtifactList)
   }
 derive instance newtypeReportDefinition :: Newtype ReportDefinition _
 derive instance repGenericReportDefinition :: Generic ReportDefinition _
@@ -277,12 +276,12 @@ instance encodeReportDefinition :: Encode ReportDefinition where encode = generi
 
 -- | Constructs ReportDefinition from required parameters
 newReportDefinition :: SchemaElementList -> CompressionFormat -> ReportFormat -> ReportName -> S3Bucket -> S3Prefix -> AWSRegion -> TimeUnit -> ReportDefinition
-newReportDefinition _AdditionalSchemaElements _Compression _Format _ReportName _S3Bucket _S3Prefix _S3Region _TimeUnit = ReportDefinition { "AdditionalSchemaElements": _AdditionalSchemaElements, "Compression": _Compression, "Format": _Format, "ReportName": _ReportName, "S3Bucket": _S3Bucket, "S3Prefix": _S3Prefix, "S3Region": _S3Region, "TimeUnit": _TimeUnit, "AdditionalArtifacts": (NullOrUndefined Nothing) }
+newReportDefinition _AdditionalSchemaElements _Compression _Format _ReportName _S3Bucket _S3Prefix _S3Region _TimeUnit = ReportDefinition { "AdditionalSchemaElements": _AdditionalSchemaElements, "Compression": _Compression, "Format": _Format, "ReportName": _ReportName, "S3Bucket": _S3Bucket, "S3Prefix": _S3Prefix, "S3Region": _S3Region, "TimeUnit": _TimeUnit, "AdditionalArtifacts": Nothing }
 
 -- | Constructs ReportDefinition's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newReportDefinition' :: SchemaElementList -> CompressionFormat -> ReportFormat -> ReportName -> S3Bucket -> S3Prefix -> AWSRegion -> TimeUnit -> ( { "ReportName" :: (ReportName) , "TimeUnit" :: (TimeUnit) , "Format" :: (ReportFormat) , "Compression" :: (CompressionFormat) , "AdditionalSchemaElements" :: (SchemaElementList) , "S3Bucket" :: (S3Bucket) , "S3Prefix" :: (S3Prefix) , "S3Region" :: (AWSRegion) , "AdditionalArtifacts" :: NullOrUndefined (AdditionalArtifactList) } -> {"ReportName" :: (ReportName) , "TimeUnit" :: (TimeUnit) , "Format" :: (ReportFormat) , "Compression" :: (CompressionFormat) , "AdditionalSchemaElements" :: (SchemaElementList) , "S3Bucket" :: (S3Bucket) , "S3Prefix" :: (S3Prefix) , "S3Region" :: (AWSRegion) , "AdditionalArtifacts" :: NullOrUndefined (AdditionalArtifactList) } ) -> ReportDefinition
-newReportDefinition' _AdditionalSchemaElements _Compression _Format _ReportName _S3Bucket _S3Prefix _S3Region _TimeUnit customize = (ReportDefinition <<< customize) { "AdditionalSchemaElements": _AdditionalSchemaElements, "Compression": _Compression, "Format": _Format, "ReportName": _ReportName, "S3Bucket": _S3Bucket, "S3Prefix": _S3Prefix, "S3Region": _S3Region, "TimeUnit": _TimeUnit, "AdditionalArtifacts": (NullOrUndefined Nothing) }
+newReportDefinition' :: SchemaElementList -> CompressionFormat -> ReportFormat -> ReportName -> S3Bucket -> S3Prefix -> AWSRegion -> TimeUnit -> ( { "ReportName" :: (ReportName) , "TimeUnit" :: (TimeUnit) , "Format" :: (ReportFormat) , "Compression" :: (CompressionFormat) , "AdditionalSchemaElements" :: (SchemaElementList) , "S3Bucket" :: (S3Bucket) , "S3Prefix" :: (S3Prefix) , "S3Region" :: (AWSRegion) , "AdditionalArtifacts" :: Maybe (AdditionalArtifactList) } -> {"ReportName" :: (ReportName) , "TimeUnit" :: (TimeUnit) , "Format" :: (ReportFormat) , "Compression" :: (CompressionFormat) , "AdditionalSchemaElements" :: (SchemaElementList) , "S3Bucket" :: (S3Bucket) , "S3Prefix" :: (S3Prefix) , "S3Region" :: (AWSRegion) , "AdditionalArtifacts" :: Maybe (AdditionalArtifactList) } ) -> ReportDefinition
+newReportDefinition' _AdditionalSchemaElements _Compression _Format _ReportName _S3Bucket _S3Prefix _S3Region _TimeUnit customize = (ReportDefinition <<< customize) { "AdditionalSchemaElements": _AdditionalSchemaElements, "Compression": _Compression, "Format": _Format, "ReportName": _ReportName, "S3Bucket": _S3Bucket, "S3Prefix": _S3Prefix, "S3Region": _S3Region, "TimeUnit": _TimeUnit, "AdditionalArtifacts": Nothing }
 
 
 
@@ -308,7 +307,7 @@ instance encodeReportFormat :: Encode ReportFormat where encode = genericEncode 
 
 -- | This exception is thrown when the number of report preference reaches max limit. The max number is 5.
 newtype ReportLimitReachedException = ReportLimitReachedException 
-  { "Message" :: NullOrUndefined (ErrorMessage)
+  { "Message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeReportLimitReachedException :: Newtype ReportLimitReachedException _
 derive instance repGenericReportLimitReachedException :: Generic ReportLimitReachedException _
@@ -318,12 +317,12 @@ instance encodeReportLimitReachedException :: Encode ReportLimitReachedException
 
 -- | Constructs ReportLimitReachedException from required parameters
 newReportLimitReachedException :: ReportLimitReachedException
-newReportLimitReachedException  = ReportLimitReachedException { "Message": (NullOrUndefined Nothing) }
+newReportLimitReachedException  = ReportLimitReachedException { "Message": Nothing }
 
 -- | Constructs ReportLimitReachedException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newReportLimitReachedException' :: ( { "Message" :: NullOrUndefined (ErrorMessage) } -> {"Message" :: NullOrUndefined (ErrorMessage) } ) -> ReportLimitReachedException
-newReportLimitReachedException'  customize = (ReportLimitReachedException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newReportLimitReachedException' :: ( { "Message" :: Maybe (ErrorMessage) } -> {"Message" :: Maybe (ErrorMessage) } ) -> ReportLimitReachedException
+newReportLimitReachedException'  customize = (ReportLimitReachedException <<< customize) { "Message": Nothing }
 
 
 
@@ -389,7 +388,7 @@ instance encodeTimeUnit :: Encode TimeUnit where encode = genericEncode options
 
 -- | This exception is thrown when providing an invalid input. eg. Put a report preference with an invalid report name, or Delete a report preference with an empty report name.
 newtype ValidationException = ValidationException 
-  { "Message" :: NullOrUndefined (ErrorMessage)
+  { "Message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeValidationException :: Newtype ValidationException _
 derive instance repGenericValidationException :: Generic ValidationException _
@@ -399,10 +398,10 @@ instance encodeValidationException :: Encode ValidationException where encode = 
 
 -- | Constructs ValidationException from required parameters
 newValidationException :: ValidationException
-newValidationException  = ValidationException { "Message": (NullOrUndefined Nothing) }
+newValidationException  = ValidationException { "Message": Nothing }
 
 -- | Constructs ValidationException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newValidationException' :: ( { "Message" :: NullOrUndefined (ErrorMessage) } -> {"Message" :: NullOrUndefined (ErrorMessage) } ) -> ValidationException
-newValidationException'  customize = (ValidationException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newValidationException' :: ( { "Message" :: Maybe (ErrorMessage) } -> {"Message" :: Maybe (ErrorMessage) } ) -> ValidationException
+newValidationException'  customize = (ValidationException <<< customize) { "Message": Nothing }
 

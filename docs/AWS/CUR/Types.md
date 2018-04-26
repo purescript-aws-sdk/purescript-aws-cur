@@ -82,7 +82,7 @@ Encode CompressionFormat
 
 ``` purescript
 newtype DeleteReportDefinitionRequest
-  = DeleteReportDefinitionRequest { "ReportName" :: NullOrUndefined (ReportName) }
+  = DeleteReportDefinitionRequest { "ReportName" :: Maybe (ReportName) }
 ```
 
 Request of DeleteReportDefinition
@@ -107,7 +107,7 @@ Constructs DeleteReportDefinitionRequest from required parameters
 #### `newDeleteReportDefinitionRequest'`
 
 ``` purescript
-newDeleteReportDefinitionRequest' :: ({ "ReportName" :: NullOrUndefined (ReportName) } -> { "ReportName" :: NullOrUndefined (ReportName) }) -> DeleteReportDefinitionRequest
+newDeleteReportDefinitionRequest' :: ({ "ReportName" :: Maybe (ReportName) } -> { "ReportName" :: Maybe (ReportName) }) -> DeleteReportDefinitionRequest
 ```
 
 Constructs DeleteReportDefinitionRequest's fields from required parameters
@@ -116,7 +116,7 @@ Constructs DeleteReportDefinitionRequest's fields from required parameters
 
 ``` purescript
 newtype DeleteReportDefinitionResponse
-  = DeleteReportDefinitionResponse { "ResponseMessage" :: NullOrUndefined (DeleteResponseMessage) }
+  = DeleteReportDefinitionResponse { "ResponseMessage" :: Maybe (DeleteResponseMessage) }
 ```
 
 Response of DeleteReportDefinition
@@ -141,7 +141,7 @@ Constructs DeleteReportDefinitionResponse from required parameters
 #### `newDeleteReportDefinitionResponse'`
 
 ``` purescript
-newDeleteReportDefinitionResponse' :: ({ "ResponseMessage" :: NullOrUndefined (DeleteResponseMessage) } -> { "ResponseMessage" :: NullOrUndefined (DeleteResponseMessage) }) -> DeleteReportDefinitionResponse
+newDeleteReportDefinitionResponse' :: ({ "ResponseMessage" :: Maybe (DeleteResponseMessage) } -> { "ResponseMessage" :: Maybe (DeleteResponseMessage) }) -> DeleteReportDefinitionResponse
 ```
 
 Constructs DeleteReportDefinitionResponse's fields from required parameters
@@ -168,7 +168,7 @@ Encode DeleteResponseMessage
 
 ``` purescript
 newtype DescribeReportDefinitionsRequest
-  = DescribeReportDefinitionsRequest { "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (GenericString) }
+  = DescribeReportDefinitionsRequest { "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (GenericString) }
 ```
 
 Request of DescribeReportDefinitions
@@ -193,7 +193,7 @@ Constructs DescribeReportDefinitionsRequest from required parameters
 #### `newDescribeReportDefinitionsRequest'`
 
 ``` purescript
-newDescribeReportDefinitionsRequest' :: ({ "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (GenericString) } -> { "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (GenericString) }) -> DescribeReportDefinitionsRequest
+newDescribeReportDefinitionsRequest' :: ({ "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (GenericString) } -> { "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (GenericString) }) -> DescribeReportDefinitionsRequest
 ```
 
 Constructs DescribeReportDefinitionsRequest's fields from required parameters
@@ -202,7 +202,7 @@ Constructs DescribeReportDefinitionsRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeReportDefinitionsResponse
-  = DescribeReportDefinitionsResponse { "ReportDefinitions" :: NullOrUndefined (ReportDefinitionList), "NextToken" :: NullOrUndefined (GenericString) }
+  = DescribeReportDefinitionsResponse { "ReportDefinitions" :: Maybe (ReportDefinitionList), "NextToken" :: Maybe (GenericString) }
 ```
 
 Response of DescribeReportDefinitions
@@ -227,7 +227,7 @@ Constructs DescribeReportDefinitionsResponse from required parameters
 #### `newDescribeReportDefinitionsResponse'`
 
 ``` purescript
-newDescribeReportDefinitionsResponse' :: ({ "ReportDefinitions" :: NullOrUndefined (ReportDefinitionList), "NextToken" :: NullOrUndefined (GenericString) } -> { "ReportDefinitions" :: NullOrUndefined (ReportDefinitionList), "NextToken" :: NullOrUndefined (GenericString) }) -> DescribeReportDefinitionsResponse
+newDescribeReportDefinitionsResponse' :: ({ "ReportDefinitions" :: Maybe (ReportDefinitionList), "NextToken" :: Maybe (GenericString) } -> { "ReportDefinitions" :: Maybe (ReportDefinitionList), "NextToken" :: Maybe (GenericString) }) -> DescribeReportDefinitionsResponse
 ```
 
 Constructs DescribeReportDefinitionsResponse's fields from required parameters
@@ -236,7 +236,7 @@ Constructs DescribeReportDefinitionsResponse's fields from required parameters
 
 ``` purescript
 newtype DuplicateReportNameException
-  = DuplicateReportNameException { "Message" :: NullOrUndefined (ErrorMessage) }
+  = DuplicateReportNameException { "Message" :: Maybe (ErrorMessage) }
 ```
 
 This exception is thrown when putting a report preference with a name that already exists.
@@ -261,7 +261,7 @@ Constructs DuplicateReportNameException from required parameters
 #### `newDuplicateReportNameException'`
 
 ``` purescript
-newDuplicateReportNameException' :: ({ "Message" :: NullOrUndefined (ErrorMessage) } -> { "Message" :: NullOrUndefined (ErrorMessage) }) -> DuplicateReportNameException
+newDuplicateReportNameException' :: ({ "Message" :: Maybe (ErrorMessage) } -> { "Message" :: Maybe (ErrorMessage) }) -> DuplicateReportNameException
 ```
 
 Constructs DuplicateReportNameException's fields from required parameters
@@ -306,7 +306,7 @@ Encode GenericString
 
 ``` purescript
 newtype InternalErrorException
-  = InternalErrorException { "Message" :: NullOrUndefined (ErrorMessage) }
+  = InternalErrorException { "Message" :: Maybe (ErrorMessage) }
 ```
 
 This exception is thrown on a known dependency failure.
@@ -331,7 +331,7 @@ Constructs InternalErrorException from required parameters
 #### `newInternalErrorException'`
 
 ``` purescript
-newInternalErrorException' :: ({ "Message" :: NullOrUndefined (ErrorMessage) } -> { "Message" :: NullOrUndefined (ErrorMessage) }) -> InternalErrorException
+newInternalErrorException' :: ({ "Message" :: Maybe (ErrorMessage) } -> { "Message" :: Maybe (ErrorMessage) }) -> InternalErrorException
 ```
 
 Constructs InternalErrorException's fields from required parameters
@@ -410,7 +410,7 @@ Encode PutReportDefinitionResponse
 
 ``` purescript
 newtype ReportDefinition
-  = ReportDefinition { "ReportName" :: ReportName, "TimeUnit" :: TimeUnit, "Format" :: ReportFormat, "Compression" :: CompressionFormat, "AdditionalSchemaElements" :: SchemaElementList, "S3Bucket" :: S3Bucket, "S3Prefix" :: S3Prefix, "S3Region" :: AWSRegion, "AdditionalArtifacts" :: NullOrUndefined (AdditionalArtifactList) }
+  = ReportDefinition { "ReportName" :: ReportName, "TimeUnit" :: TimeUnit, "Format" :: ReportFormat, "Compression" :: CompressionFormat, "AdditionalSchemaElements" :: SchemaElementList, "S3Bucket" :: S3Bucket, "S3Prefix" :: S3Prefix, "S3Region" :: AWSRegion, "AdditionalArtifacts" :: Maybe (AdditionalArtifactList) }
 ```
 
 The definition of AWS Cost and Usage Report. Customer can specify the report name, time unit, report format, compression format, S3 bucket and additional artifacts and schema elements in the definition.
@@ -435,7 +435,7 @@ Constructs ReportDefinition from required parameters
 #### `newReportDefinition'`
 
 ``` purescript
-newReportDefinition' :: SchemaElementList -> CompressionFormat -> ReportFormat -> ReportName -> S3Bucket -> S3Prefix -> AWSRegion -> TimeUnit -> ({ "ReportName" :: ReportName, "TimeUnit" :: TimeUnit, "Format" :: ReportFormat, "Compression" :: CompressionFormat, "AdditionalSchemaElements" :: SchemaElementList, "S3Bucket" :: S3Bucket, "S3Prefix" :: S3Prefix, "S3Region" :: AWSRegion, "AdditionalArtifacts" :: NullOrUndefined (AdditionalArtifactList) } -> { "ReportName" :: ReportName, "TimeUnit" :: TimeUnit, "Format" :: ReportFormat, "Compression" :: CompressionFormat, "AdditionalSchemaElements" :: SchemaElementList, "S3Bucket" :: S3Bucket, "S3Prefix" :: S3Prefix, "S3Region" :: AWSRegion, "AdditionalArtifacts" :: NullOrUndefined (AdditionalArtifactList) }) -> ReportDefinition
+newReportDefinition' :: SchemaElementList -> CompressionFormat -> ReportFormat -> ReportName -> S3Bucket -> S3Prefix -> AWSRegion -> TimeUnit -> ({ "ReportName" :: ReportName, "TimeUnit" :: TimeUnit, "Format" :: ReportFormat, "Compression" :: CompressionFormat, "AdditionalSchemaElements" :: SchemaElementList, "S3Bucket" :: S3Bucket, "S3Prefix" :: S3Prefix, "S3Region" :: AWSRegion, "AdditionalArtifacts" :: Maybe (AdditionalArtifactList) } -> { "ReportName" :: ReportName, "TimeUnit" :: TimeUnit, "Format" :: ReportFormat, "Compression" :: CompressionFormat, "AdditionalSchemaElements" :: SchemaElementList, "S3Bucket" :: S3Bucket, "S3Prefix" :: S3Prefix, "S3Region" :: AWSRegion, "AdditionalArtifacts" :: Maybe (AdditionalArtifactList) }) -> ReportDefinition
 ```
 
 Constructs ReportDefinition's fields from required parameters
@@ -480,7 +480,7 @@ Encode ReportFormat
 
 ``` purescript
 newtype ReportLimitReachedException
-  = ReportLimitReachedException { "Message" :: NullOrUndefined (ErrorMessage) }
+  = ReportLimitReachedException { "Message" :: Maybe (ErrorMessage) }
 ```
 
 This exception is thrown when the number of report preference reaches max limit. The max number is 5.
@@ -505,7 +505,7 @@ Constructs ReportLimitReachedException from required parameters
 #### `newReportLimitReachedException'`
 
 ``` purescript
-newReportLimitReachedException' :: ({ "Message" :: NullOrUndefined (ErrorMessage) } -> { "Message" :: NullOrUndefined (ErrorMessage) }) -> ReportLimitReachedException
+newReportLimitReachedException' :: ({ "Message" :: Maybe (ErrorMessage) } -> { "Message" :: Maybe (ErrorMessage) }) -> ReportLimitReachedException
 ```
 
 Constructs ReportLimitReachedException's fields from required parameters
@@ -622,7 +622,7 @@ Encode TimeUnit
 
 ``` purescript
 newtype ValidationException
-  = ValidationException { "Message" :: NullOrUndefined (ErrorMessage) }
+  = ValidationException { "Message" :: Maybe (ErrorMessage) }
 ```
 
 This exception is thrown when providing an invalid input. eg. Put a report preference with an invalid report name, or Delete a report preference with an empty report name.
@@ -647,7 +647,7 @@ Constructs ValidationException from required parameters
 #### `newValidationException'`
 
 ``` purescript
-newValidationException' :: ({ "Message" :: NullOrUndefined (ErrorMessage) } -> { "Message" :: NullOrUndefined (ErrorMessage) }) -> ValidationException
+newValidationException' :: ({ "Message" :: Maybe (ErrorMessage) } -> { "Message" :: Maybe (ErrorMessage) }) -> ValidationException
 ```
 
 Constructs ValidationException's fields from required parameters
